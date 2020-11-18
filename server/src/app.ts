@@ -1,22 +1,22 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import routes from './routes/routes';
 import { Connection, createConnection} from 'typeorm';
+import routes from './routes/routes';
 
 class App{
 
     public express: express.Application;
 
     constructor(){
-        this.database();
         this.express = express();
         this.middleware();
         this.routes();
+        this.database();
     }
 
     private middleware(): void {
-        this.express.use(cors({origin: `http://localhost:8080`}));                          // Use cors to permit to use API               
+        this.express.use(cors());                                     // Use cors to permit to use API               
         this.express.use(express.static(__dirname))                   // Where to find static files to give to the view
         this.express.use(express.json());                             // Suport JSON-encoded request bodies
         //this.express.use(express.urlencoded())                      // Suport URL-encoded request bodies (USE INSTEAD OF bodyParser.urlencoded CANT USE BOTH)
@@ -26,7 +26,7 @@ class App{
     }
 
     private routes(): void  {
-        this.express.use('', routes);
+        this.express.use(routes);
     }
 
     private async database(): Promise<Connection> {
