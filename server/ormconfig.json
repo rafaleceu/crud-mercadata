@@ -1,0 +1,12 @@
+{
+    "host": "localhost",
+    "username": "root",
+    "password": "123",
+    "database": "mercadata-users",
+    "port": 3306,
+    "type": "mysql",
+    "syncronize": false,
+    "logging": false,
+    "entities": ["dist/**/*.js"],
+    "cli": { "entitiesDir": "src/model" }
+}
