@@ -7,7 +7,7 @@ class UserController{
     showAllUser = async(req: Request, res: Response): Promise<Response> => {
         const userRepository = getRepository(User);
         const users = await userRepository.find({
-            select: ['id', 'name', 'lastName', 'email', 'createdAt', 'updateAt']
+            select: ['id', 'name', 'lastName', 'email', 'createdAt', 'updatedAt']
         });
         return res.send(users);
     };
@@ -15,14 +15,13 @@ class UserController{
     showUser = async(req: Request, res:Response): Promise<Response> => {
         const userRepository = getRepository(User);
         const users = await userRepository.findByIds([req.params.id], {
-            select: ['id', 'name', 'lastName', 'email', 'createdAt', 'updateAt']
+            select: ['id', 'name', 'lastName', 'email', 'createdAt', 'updatedAt']
         });
         return res.send(users);
     };
 
     createUser(){
         
-
     };
 
     updateUser(){

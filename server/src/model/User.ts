@@ -25,7 +25,7 @@ export class User {
 
     @Column()
     @UpdateDateColumn()
-    updateAt!: Date;
+    updatedAt!: Date;
 
     hashPassword(): void{
         this.password = bcryptjs.hashSync(this.password, 10);
