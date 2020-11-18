@@ -16,6 +16,7 @@ class App{
     }
 
     private middleware(): void {
+        //Possible cors options: {origin: `http://localhost:8080`})); 
         this.express.use(cors());                                     // Use cors to permit to use API               
         this.express.use(express.static(__dirname))                   // Where to find static files to give to the view
         this.express.use(express.json());                             // Suport JSON-encoded request bodies
