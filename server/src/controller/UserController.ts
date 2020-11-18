@@ -14,13 +14,14 @@ class UserController{
 
     showUser = async(req: Request, res:Response): Promise<Response> => {
         const userRepository = getRepository(User);
-        const users = await userRepository.findOneOrFail(req.params.id, {
+        const users = await userRepository.findByIds([req.params.id], {
             select: ['id', 'name', 'lastName', 'email', 'createdAt', 'updateAt']
         });
         return res.send(users);
     };
 
     createUser(){
+        
 
     };
 
