@@ -1,40 +1,70 @@
 import React, { useEffect, useState } from 'react';
-import {listUsers, deleteUsers} from '../services/user.service';
+import {createUsers} from '../services/user.service';
 import {useHistory} from 'react-router-dom';
 
-const UserAdd = () => {
+class NameForm extends React.Component {
 
-    return (
-        <React.Fragment>
-        <div>
-            <form className="my-2 mx-5 col-md-5" onsubmit="op.add(event)">
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            lastName: '',
+            password: '',
+            email: ''
+        };
 
-                <div className="form-group">
-                  <label for="i-product">Nome</label>
-                  <input type="text" className="form-control" aria-describedby="formName" placeholder="Digite seu nome"/>
-                </div>
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+  
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+    
+        this.setState({
+          [name]: value
+        });
 
-                <div className="form-group">
-                    <label for="i-quantity">Sobrenome</label>
-                    <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="Digite seu sobrenome"/>
-                </div>
+      }
+  
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log(this.state);
 
-                <div className="form-group">
-                    <label for="i-value">Senha</label>
-                    <input type="password" className="form-control" aria-describedby="formPassword" placeholder="Digite sua senha"/>
-                </div>
+    }
 
-                <div className="form-group">
-                    <label for="i-date">E-mail</label>
-                    <input type="email" className="form-control" aria-describedby="formEmail" placeholder="Digite seu e-mail"/>
-                </div>
+    render() {
+        return(
+            <div>
+                <form className="my-2 mx-5 col-md-5" onSubmit={this.handleSubmit}>
 
-                <button type="submit" className="btn btn-primary" id="btn-add">Adicionar</button>
-                <button type="button" className="btn btn-danger mx-2" id="btn-clear">Limpar</button>
-            </form>
-        </div>
-        </React.Fragment>
-    )
+                    <div className="form-group">
+                    <label>Nome</label>
+                    <input type="text" className="form-control" aria-describedby="formName" placeholder="Digite seu nome" name="name" onChange={this.handleInputChange} />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Sobrenome</label>
+                        <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="Digite seu sobrenome" name="lastName" onChange={this.handleInputChange}/>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Senha</label>
+                        <input type="password" className="form-control" aria-describedby="formPassword" placeholder="Digite sua senha" name="password" onChange={this.handleInputChange}/>
+                    </div>
+
+                    <div className="form-group">
+                        <label>E-mail</label>
+                        <input type="email" className="form-control" aria-describedby="formEmail" placeholder="Digite seu e-mail" name="email" onChange={this.handleInputChange}/>
+                    </div>
+
+                    <button type="submit" className="btn btn-primary" value="Enviar">Adicionar</button>
+                    <button type="button" className="btn btn-danger mx-2">Limpar</button>
+                </form>
+            </div>
+        );
+    };
 };
 
-export default UserAdd;
+export default NameForm;
