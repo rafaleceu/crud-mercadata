@@ -20,18 +20,26 @@ class UserController{
         return res.send(users);
     };
 
-    createUser(){
-        
+    createUser = async(req: Request, res:Response): Promise<Response> => {
+        const userRepository = getRepository(User);
+        const users = await userRepository.save(req.body)
+        console.log(req.body)
+        return res.send(users);
     };
 
-    updateUser(){
-
+    deleteUser = async(req: Request, res:Response): Promise<Response> => {
+        console.log(req.params)
+        const userRepository = getRepository(User);
+        const users = await userRepository.delete(req.params.id);
+        return res.send(users);
     };
 
-    deleteUser(){
+    updateUser = async(req: Request, res:Response): Promise<Response> => {
+        const userRepository = getRepository(User);
+        const users = await userRepository;////
+        return res.send(users);
+    };  
 
-    };
-    
 };
 
 export default new UserController();
