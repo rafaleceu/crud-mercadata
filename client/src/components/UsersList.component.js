@@ -5,10 +5,9 @@ import {useHistory} from 'react-router-dom';
 const UserListComponent = () => {
 
     const history = useHistory();
+
     const[users, setUsers] = useState([]);
 
-    useEffect( () => {getUsers()}, []);
-    
     const editUser = (user) => history.push(`/update/${user.id}`);
 
     const getUsers = async() => {
@@ -68,6 +67,8 @@ const UserListComponent = () => {
             </table>
         );
     };
+
+    useEffect( () => {getUsers()}, []);    
 
     return (
         <React.Fragment>

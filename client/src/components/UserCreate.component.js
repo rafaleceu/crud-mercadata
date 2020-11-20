@@ -5,7 +5,9 @@ import {useHistory} from 'react-router-dom';
 const UserAddComponent = () => {
 
     const history = useHistory();
+
     const [isSubmited, setisSubmited] = useState(false);
+    
     const [form, setForm] = useState({
         name: '',
         lastName: '',
