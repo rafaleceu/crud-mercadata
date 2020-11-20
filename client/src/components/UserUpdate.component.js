@@ -5,25 +5,34 @@ import {useHistory, useParams} from 'react-router-dom';
 const UserUpdateComponent = () => {
 
     const history = useHistory();
+
     const { id } = useParams(); //Get URI parms
+
     const [isSubmited, setisSubmited] = useState(false);
+
+    const[isPreLoaded, setIsPreLoaded] = useState(false);
+
     const [form, setForm] = useState({
         name: '',
         lastName: '',
         password: '',
         email: ''
     });
+  
+    const preLoad = async() => {
 
-    useEffect( () => {getUser()});
+        if (!isPreLoaded){
 
-    const getUser = async() => {
+            try {
+                const user = await oneUser(id);
+                setForm(user.data[0])
+            } catch (error) {
+                console.log(error);
+            };
 
-        try {
-            const user = await oneUser(id);
-            setForm(user.data[0])
-        } catch (error) {
-            console.log(error);
-        };
+            setIsPreLoaded(true)
+
+        }
 
     };
 
@@ -45,15 +54,18 @@ const UserUpdateComponent = () => {
     };
 
     const handlerChange = (event) => {
-
+        event.preventDefault();
         setForm({
-            ...form,
-            [event.target.name]: event.target.value
+             [event.target.name]: event.target.value
         });
 
         return;
 
     };
+
+    //***Check which method consume less network and which one is faster***
+    useEffect( () => {preLoad()});
+    //preLoad();
 
     return(
         <div>
