@@ -4,16 +4,14 @@ import {useHistory} from 'react-router-dom';
 
 const UserAddComponent = () => {
 
+    const history = useHistory();
+    const [isSubmited, setisSubmited] = useState(false);
     const [form, setForm] = useState({
         name: '',
         lastName: '',
         password: '',
         email: ''
     });
-    
-    //const [isEdit, setisEdit] = useState(false);
-    const [isSubmited, setisSubmited] = useState(false);
-    const history = useHistory();
 
     const submitForm = async(event) =>{
 
@@ -69,6 +67,7 @@ const UserAddComponent = () => {
 
                 <button type="submit" className="btn btn-primary" onClick={ submitForm }>Adicionar</button>
                 <button type="button" className="btn btn-danger mx-2">Limpar</button>
+                
             </form>
         </div>
     );

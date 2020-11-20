@@ -4,34 +4,39 @@ import {useHistory} from 'react-router-dom';
 
 const UserListComponent = () => {
 
-    const[users, setUsers] = useState([]);
     const history = useHistory();
+    const[users, setUsers] = useState([]);
 
     useEffect( () => {getUsers()}, []);
+    
+    const editUser = (user) => history.push(`/update/${user.id}`);
 
     const getUsers = async() => {
+
         try {
             const users = await usersList();
             setUsers(users.data);
         } catch (error) {
             console.log(error);
         };
+
     };
  
     const deleteUser = async(user) => {
+
         try {
             if(window.confirm(`Você deseja excluir o usuario ${user.name}?`)){
                 await userDelete(user.id);
                 getUsers();
-            }
+            };
         } catch (error) {
-            console.log(error)
-        }
-    }
+            console.log(error);
+        };
 
-    const editUser = (user) => history.push(`/edit/${user.id}`);
+    };
 
     const createTable = () =>{
+
         const rows = users.map((user, index) => (
             <tr key={index}>
                 <td>{user.name}</td>
@@ -45,6 +50,7 @@ const UserListComponent = () => {
                 </td>
             </tr>
         ));
+
         return (
             <table className="table table-script table-dark m-3">
                 <thead>
@@ -60,14 +66,14 @@ const UserListComponent = () => {
                     { rows }
                 </tbody>
             </table>
-        )
+        );
     };
 
     return (
         <React.Fragment>
             {createTable()}
         </React.Fragment>
-    )
+    );
 
 };
 
