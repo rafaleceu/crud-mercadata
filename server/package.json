@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "start:dev": "nodemon dist/server.ts"
+    "start:server": "dist/server.js",
+    "start:dev": "nodemon dist/server.js"
   },
   "author": "",
   "license": "ISC",
