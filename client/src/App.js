@@ -4,7 +4,7 @@ import {  BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import UserCreateComponent from'./components/UserCreate.component';
-import UserListComponent from './components/UserList.component';
+import UsersListComponent from './components/UsersList.component';
 import UserUpdateComponent from './components/UserUpdate.component';
 
 class App extends Component {
@@ -31,7 +31,7 @@ class App extends Component {
                     <div className="container mt-3">
                         <Switch>
                             <Route exact path = { ["/create"] } component={UserCreateComponent} />
-                            <Route exact path = { ["/read"]   } component={UserListComponent} />
+                            <Route exact path = { ["/read"]   } component={UsersListComponent} />
                             <Route exact path = { ["/update/:id([0-9]+)"] } component={UserUpdateComponent} />
                         </Switch>
                     </div>
