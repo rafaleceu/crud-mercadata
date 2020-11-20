@@ -27,11 +27,11 @@ Server side `npm run start:server`
 
 > Portas padrão:\
 > Client Side: 8081\
-> Server Side: 8080\
+> Server Side: 8080
 
 ## MySQL Config
 
-Arquivo para configurar banco de dados MySQL com o sistema -> ormconfig.json\
+Arquivo para configurar banco de dados MySQL com o sistema -> ormconfig.json
 
 ## Features
 
