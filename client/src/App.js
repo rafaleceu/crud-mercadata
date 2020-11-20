@@ -6,7 +6,6 @@ import './App.css';
 import UserCreateComponent from'./components/UserCreate.component';
 import UserListComponent from './components/UserList.component';
 import UserUpdateComponent from './components/UserUpdate.component';
-import UserDeleteComponent from './components/UserDelete.component';
 
 class App extends Component {
     render() {
@@ -26,14 +25,6 @@ class App extends Component {
                             <Link to={"/read"} className="nav-link">Read</Link>
                             </li>
 
-                            <li className="nav-item">
-                            <Link to={"/update"} className="nav-link">Update</Link>
-                            </li>
-
-                            <li className="nav-item">
-                            <Link to={"/delete"} className="nav-link">Delete</Link>
-                            </li>
-
                         </div>
                     </nav>
 
@@ -42,7 +33,6 @@ class App extends Component {
                             <Route exact path = { ["/create"] } component={UserCreateComponent} />
                             <Route exact path = { ["/read"]   } component={UserListComponent} />
                             <Route exact path = { ["/update/:id([0-9]+)"] } component={UserUpdateComponent} />
-                            <Route exact path = { ["/delete"] } component={UserDeleteComponent} />
                         </Switch>
                     </div>
 
