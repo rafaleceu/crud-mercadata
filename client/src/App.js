@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {  BrowserRouter, Switch, Router, Link } from 'react-router-dom';
+import {  BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import UserCreateComponent from'./components/UserCreate.component';
@@ -11,7 +11,7 @@ import UserDeleteComponent from './components/UserDelete.component';
 class App extends Component {
     render() {
         return (
-            <Router>
+            <BrowserRouter>
                 <div>
 
                     <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -39,15 +39,15 @@ class App extends Component {
 
                     <div className="container mt-3">
                         <Switch>
-                            <BrowserRouter exact path = { ["/create"] } component= { UserCreateComponent } />
-                            <BrowserRouter exact path = { ["/read"]   } component= { UserListComponent } />
-                            <BrowserRouter exact path = { ["/update"] } component= { UserUpdateComponent } />
-                            <BrowserRouter exact path = { ["/delete"] } component= { UserDeleteComponent } />
+                            <Route exact path = { ["/create"] } component={UserCreateComponent} />
+                            <Route exact path = { ["/read"]   } component={UserListComponent} />
+                            <Route exact path = { ["/update"] } component={UserUpdateComponent} />
+                            <Route exact path = { ["/delete"] } component={UserDeleteComponent} />
                         </Switch>
                     </div>
 
                 </div>
-            </Router>
+            </BrowserRouter>
         );
     }
 }
