@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {  BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {  BrowserRouter, Switch, Router, Link } from 'react-router-dom';
 
 import './App.css';
 import UserCreateComponent from'./components/UserCreate.component';
@@ -39,10 +39,10 @@ class App extends Component {
 
                     <div className="container mt-3">
                         <Switch>
-                            <Route exact path = { ["/create"] } component={UserCreateComponent} />
-                            <Route exact path = { ["/read"]   } component={UserListComponent} />
-                            <Route exact path = { ["/update"] } component={UserUpdateComponent} />
-                            <Route exact path = { ["/delete"] } component={UserDeleteComponent} />
+                            <BrowserRouter exact path = { ["/create"] } component= { UserCreateComponent } />
+                            <BrowserRouter exact path = { ["/read"]   } component= { UserListComponent } />
+                            <BrowserRouter exact path = { ["/update"] } component= { UserUpdateComponent } />
+                            <BrowserRouter exact path = { ["/delete"] } component= { UserDeleteComponent } />
                         </Switch>
                     </div>
 
