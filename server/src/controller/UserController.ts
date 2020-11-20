@@ -36,7 +36,7 @@ class UserController{
 
     updateUser = async(req: Request, res:Response): Promise<Response> => {
         const userRepository = getRepository(User);
-        const users = await userRepository;////
+        const users = await userRepository.update(req.params.id, req.body);
         return res.send(users);
     };  
 
