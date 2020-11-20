@@ -38,4 +38,4 @@ Arquivo para configurar banco de dados MySQL com o sistema -> ormconfig.json\
 Create - criar usuário no banco de dados a partir de um formulário.\
 Read - Uma tabela com todos usuários, excluindo as senhas.\
 Update - Atualizar usuário unico no banco de dados\
-Delete  - Deletar registro do usuário no banco de dados\
+Delete  - Deletar registro do usuário no banco de dados
