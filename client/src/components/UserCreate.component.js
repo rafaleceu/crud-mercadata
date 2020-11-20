@@ -15,6 +15,17 @@ const UserAddComponent = () => {
         email: ''
     });
 
+    const handlerChange = (event) => {
+
+        setForm({
+            ...form,
+            [event.target.name]: event.target.value
+        });
+
+        return;
+
+    };
+
     const submitForm = async(event) =>{
 
         event.preventDefault()
@@ -32,16 +43,17 @@ const UserAddComponent = () => {
 
     };
 
-    const handlerChange = (event) => {
+    const clearForm = (event) => {
 
-        setForm({
-            ...form,
-            [event.target.name]: event.target.value
-        });
+        event.preventDefault();
 
-        return;
+        setForm({        
+        name: '',
+        lastName: '',
+        password: '',
+        email: ''});
 
-    };
+    }
 
     return(
         <div>
@@ -68,7 +80,7 @@ const UserAddComponent = () => {
                 </div>
 
                 <button type="submit" className="btn btn-primary" onClick={ submitForm }>Adicionar</button>
-                <button type="button" className="btn btn-danger mx-2">Limpar</button>
+                <button type="button" className="btn btn-danger mx-2" onClick={ clearForm }>Limpar</button>
                 
             </form>
         </div>
