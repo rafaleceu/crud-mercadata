@@ -25,17 +25,17 @@ Client Side `npm start`
 
 Server side `npm run start:server`
 
-> Portas padrão: 
-> Client Side: 8081
-> Server Side: 8080
+> Portas padrão:\
+> Client Side: 8081\
+> Server Side: 8080\
 
 ## MySQL Config
 
-Arquivo para configurar banco de dados MySQL com o sistema -> ormconfig.json
+Arquivo para configurar banco de dados MySQL com o sistema -> ormconfig.json\
 
 ## Features
 
-Create - criar usuário no banco de dados a partir de um formulário.
-Read - Uma tabela com todos usuários, excluindo as senhas.
-Update - Atualizar usuário unico no banco de dados
-Delete  - Deletar registro do usuário no banco de dados
+Create - criar usuário no banco de dados a partir de um formulário.\
+Read - Uma tabela com todos usuários, excluindo as senhas.\
+Update - Atualizar usuário unico no banco de dados\
+Delete  - Deletar registro do usuário no banco de dados\
