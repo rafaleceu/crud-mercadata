@@ -19,12 +19,10 @@ export class User {
     @Column({unique: true})
     email!: string;
 
-    @Column()
-    @CreateDateColumn()
-    createdAt!: Date;
+    @CreateDateColumn({ type: 'date' })  
+    createdAt!: Date; 
 
-    @Column()
-    @UpdateDateColumn()
+    @UpdateDateColumn({ type: 'timestamp' })
     updatedAt!: Date;
 
     hashPassword(): void{
@@ -35,5 +33,4 @@ export class User {
         return bcryptjs.compareSync(password, this.password)
     }
 
-    
 }
