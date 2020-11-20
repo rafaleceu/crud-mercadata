@@ -43,7 +43,7 @@ const UserListComponent = () => {
                 <td>{user.email}</td>
                 <td>{user.createdAt}</td>
                 <td>{user.updatedAt}</td>
-                <td className="table-primary">
+                <td className="table-light">
                     <span className="mx-3" onClick={ () => editUser(user) } >Editar</span>
                     <span onClick={ () => deleteUser(user) } >Excluir</span>
                 </td>
@@ -60,7 +60,7 @@ const UserListComponent = () => {
                         <th scope="col">Email</th>
                         <th scope="col">Criado em</th>
                         <th scope="col">Atualizado em</th>
-                        <th className="text-center table-primary" scope="col">Ações</th>
+                        <th className="text-center table-light" scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>

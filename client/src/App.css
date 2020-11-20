@@ -1,3 +1,19 @@
 body{
-  background-color: rgb(223, 223, 223);
+  background-color: #00000044;
 }
+
+/* UsersList Component */
+
+span{
+  cursor: pointer;
+  color: black;
+}
+
+#root > div > div > table > thead > tr > th.text-center.table-light{
+  color: black;
+}
+
+/* UserCreate Component*/
+
+/* UserUpdate Component*/
+

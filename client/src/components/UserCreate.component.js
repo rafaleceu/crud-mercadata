@@ -76,7 +76,7 @@ const UserAddComponent = () => {
 
                 <div className="form-group">
                     <label>E-mail</label>
-                    <input type="email"className="form-control" aria-describedby="formEmail" placeholder="Digite seu e-mail" name="email" value={form.email} disabled={isSubmited} onChange={ handlerChange }  />
+                    <input type="email" className="form-control" aria-describedby="formEmail" placeholder="Digite seu e-mail" name="email" value={form.email} disabled={isSubmited} onChange={ handlerChange }  />
                 </div>
 
                 <button type="submit" className="btn btn-primary" onClick={ submitForm }>Adicionar</button>
