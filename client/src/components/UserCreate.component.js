@@ -48,10 +48,11 @@ const UserAddComponent = () => {
         event.preventDefault();
 
         setForm({        
-        name: '',
-        lastName: '',
-        password: '',
-        email: ''});
+            name: '',
+            lastName: '',
+            password: '',
+            email: ''
+        });
 
     }
 
