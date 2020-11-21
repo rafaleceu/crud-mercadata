@@ -1,17 +1,19 @@
-import React, {useState } from 'react';
+import React, {useState, Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 
 import './App.css';
 import {userLogin} from './services/user.service';
-import MainScreen from './components/MainScreen.component.js'
+import MainPage from './components/MainPage.component.js'
 
 const App = () => {
 
     const history = useHistory();
 
-    const [isSubmited, setisSubmited] = useState(false);
+    const [isSubmited, setIsSubmited] = useState(false);
+
+    //const [isLogged, setIsLogged] = useState(false)
 
     const [form, setForm] = useState({
         name: '',
@@ -30,17 +32,18 @@ const App = () => {
     };
 
     const submitForm = async(event) =>{
-
+        
         event.preventDefault()
 
         try {
 
-            setisSubmited(true);
+            setIsSubmited(true);
             let allowLogin = await userLogin(form);
-            setisSubmited(false);
-
+            setIsSubmited(false);
+            
             if (allowLogin.data === true){
-               history.push('/main');
+ 
+                window.location.assign('/main');
             }else{
                 alert('Login ou senha incorretos!!!')
                 clearForm()
@@ -63,10 +66,13 @@ const App = () => {
 
     }
     
+
     return (
         <BrowserRouter>
-            <div>
+            <div id='loginpage'>
+
                 <div className="d-flex justify-content-center my-5 mx-5">
+
                     <form className="my-5 mx-5 col-md-4">
 
                     <div className="form-group">
@@ -83,12 +89,15 @@ const App = () => {
                     <button type="button" className="btn btn-success mx-2" >Registrar-se</button>
 
                     </form>
+
                 </div>
-                <div className="container mt-3">
+
+                <div>
                     <Switch>
-                        <Route exact path = { ["/main"] } component={ MainScreen } />
+                        <Route exact path = { ["/main"] } component={ MainPage } />
                     </Switch>
                 </div>
+
             </div>
         </BrowserRouter>
     );

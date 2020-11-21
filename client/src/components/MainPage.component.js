@@ -5,7 +5,7 @@ import UserCreateComponent from'./UserCreate.component';
 import UsersListComponent from './UsersList.component';
 import UserUpdateComponent from './UserUpdate.component';
 
-const MainScreen = () => {
+const MainPage = () => {
     
     return (
         <BrowserRouter>
@@ -39,4 +39,4 @@ const MainScreen = () => {
 
 }
 
-export default MainScreen
+export default MainPage
