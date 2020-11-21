@@ -23,7 +23,7 @@ class UserController {
         this.showUser = (req, res) => __awaiter(this, void 0, void 0, function* () {
             const userRepository = typeorm_1.getRepository(User_1.User);
             const users = yield userRepository.findByIds([req.params.id], {
-                select: ['id', 'name', 'lastName', 'email', 'createdAt', 'updatedAt']
+                select: ['id', 'name', 'password', 'lastName', 'email', 'createdAt', 'updatedAt']
             });
             return res.send(users);
         });
