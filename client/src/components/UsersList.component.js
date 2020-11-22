@@ -60,7 +60,7 @@ const UserListComponent = () => {
                         <th scope="col">Email</th>
                         <th scope="col">Criado em</th>
                         <th scope="col">Atualizado em</th>
-                        <th className="text-center table-light" scope="col">Ações</th>
+                        <th id='table-actions' className="text-center table-light" scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -15,11 +15,11 @@ const MainPage = () => {
                     <div className="navbar-nav mr-auto">
 
                         <li className="nav-item">
-                        <Link to={"/create"} className="nav-link">Create</Link>
+                        <Link to={"/create"} className="nav-link">Registro</Link>
                         </li>
 
                         <li className="nav-item">
-                        <Link to={"/read"} className="nav-link">Read</Link>
+                        <Link to={"/read"} className="nav-link">Usuários</Link>
                         </li>
 
                     </div>
