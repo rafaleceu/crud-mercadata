@@ -1,6 +1,7 @@
 body{
-  background-color: #00000009;
+  background-color: #ff282817;
 }
+
 
 /* UsersList Component */
 
@@ -9,7 +10,7 @@ span{
   color: black;
 }
 
-#root > div > div > table > thead > tr > th.text-center.table-light{
+#table-actions{
   color: black;
 }
 
